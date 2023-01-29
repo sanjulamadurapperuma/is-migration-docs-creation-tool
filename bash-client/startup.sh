@@ -45,7 +45,7 @@ fi
 
 
 if [ -d "migration-docs" ]; then
-cd ./is-migration-docs-generator
+cd ./is-migration-docs-creation-tool/bash-client
 
 echo "Customer Account : $customer_account_name"
 echo "Source Version   : $source_is_version"
@@ -55,7 +55,7 @@ directory_name="WSO2x$customer_account_name-Identity-Server-Migration-$source_is
 directory_to_be_named="[WSO2 x $customer_account_name] Identity Server Migration from $source_is_version to $target_is_version"
 zip_file_to_be_name="$renamed_directory.zip"
 # move back to root
-cd ..
+cd ./../../
 
 if [ -d "$directory_name" ]; then
   echo "Directory already exsists...."
