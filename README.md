@@ -1,6 +1,6 @@
 #### ⚠️ DISCLAIMER
 
-The artifacts and this tool's execution is completely depend upon the changes committed into `wso2-enterprise/migration-docs` repository. `is-migration-dcos-creation-tool` is not syncronizly getting updated with `wso2-enterprise/migration-docs` changes. Usually It may take 5-6 business days at least.
+The artifacts and this tool's execution is completely depend upon the changes committed into `wso2-enterprise/migration-docs` repository. `is-migration-docs-creation-tool` is not syncronizly getting updated with `wso2-enterprise/migration-docs` changes. Usually It may take 5-6 business days at least.
 
 ------------------------------------------------------------------
 
@@ -14,10 +14,13 @@ https://user-images.githubusercontent.com/38750420/215346762-7bacac9d-b4ca-436e-
 
 ### Prerequisites
 1. Valid Personal Access Token from GitHub.
-2. `tree` installed in Linux/Windows (WSL) OS. (If you are using darwin based MacOS, `tree` is already there.)
+2. `tree` installed in Linux/Windows (WSL) OS. (If you are using darwin based MacOS, usually `tree` is already there. If not use the `brew` command and continue the intstallation.)
 
    ```
    sudo apt-get install tree
+   ```
+   ```
+   brew install tree
    ```
 
 ### Support Matrix
