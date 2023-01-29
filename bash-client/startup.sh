@@ -14,7 +14,7 @@ then
   else
      
 # moving back to rrot directory
-cd ..
+cd ./../../
 
 # check if migration-docs from wso2-enterprise already avaialble
 if [ -d "migration-docs" ]; then
