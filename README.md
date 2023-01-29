@@ -4,8 +4,13 @@ The artifacts and this tool's execution is completely depend upon the changes co
 
 ------------------------------------------------------------------
 
-# is-migration-docs-generator
-##### This repository is exclusive for WSO2 IAM Customer Success Team
+
+# is-migration-docs-creation-tool
+
+
+https://user-images.githubusercontent.com/38750420/215346762-7bacac9d-b4ca-436e-82a9-deeafd136504.mp4
+
+
 
 ### Prerequisites
 1. Valid Personal Access Token from GitHub.
