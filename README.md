@@ -40,7 +40,7 @@ git clone https://github.com/DInuwan97/is-migration-docs-creation-tool.git
 ```
 2. Browse into `./is-migration-docs-creation-tool/bash-client/` and add required parameters to the `values.config` file as follows.
 ```config
-git_pat=<VALID GIT PAT>
+git_pat=VALID GIT PAT
 customer_account_name=ABC-Institute
 source_is_version=5.7.0
 target_is_version=6.0.0
