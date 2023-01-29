@@ -12,24 +12,30 @@ then
   then
    echo "Source and Target versions shoul not be same."
   else
-     
+
 # moving back to rrot directory
-cd ..
+cd ./../../
 
 # check if migration-docs from wso2-enterprise already avaialble
 if [ -d "migration-docs" ]; then
   echo "migration-docs directory already available"
 else
   echo "migration-docs directory is not available....."
-   echo "Do you want to clone migration docs from wso2-exterprise ? (Y/N)"
+   echo "Do you want to clone migration docs from wso2-exterprise ? (Y/N) || (y/n)"
    read cloning_option
-    if [ "$cloning_option" = "Y" ]; then
+    if [ "$cloning_option" = "Y" ] || [ "$cloning_option" = "y" ]
+    then
       # clone migration docs from wso2-enterprise
       echo "Accessing wso2-enterprise....."
       git clone "https://$git_pat@github.com/wso2-enterprise/migration-docs.git"
-      echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
-      echo "---------------------------------------------------------------------Cloning Complted----------------------------------------------------------------------------"
-      echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+        if [ -d "migration-docs" ]; then
+          echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+          echo "---------------------------------------------------------------------Cloning Complted----------------------------------------------------------------------------"
+          echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+        else
+          echo "Unauthorized access to access wso2-enterprise"
+        fi
+
     else
       echo "Clone wso2-enterprise manually and perform the docs creation..."
       echo "Use https://github.com/wso2-enterprise/migration-docs"
@@ -302,11 +308,11 @@ else
   zip -r "$zip_file_name" "$renamed_directory"
   echo 'File zipped successfully.'
   echo "$zip_file_name"
-  
-  # observing md5sum 
+
+  # observing md5sum
   touch "$zip_file_name.log"
   md5sum "$zip_file_name" >> "$zip_file_name.log"
-  
+
   echo "md5sum value taken for the zip"
   echo "$zip_file_name.log"
 fi
