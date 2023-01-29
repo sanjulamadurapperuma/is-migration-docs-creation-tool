@@ -9,7 +9,11 @@ The artifacts and this tool's execution is completely depend upon the changes co
 
 ### Prerequisites
 1. Valid Personal Access Token from GitHub.
-2. `tree` installed in Linux/Mac/Windows (WSL) OS.
+2. `tree` installed in Linux/Windows (WSL) OS. (If you are using darwin based MacOS, `tree` is already there.)
+
+   ```
+   sudo apt-get install tree
+   ```
 
 ### Support Matrix
 | Source IS Version | Target IS Version |
@@ -25,11 +29,11 @@ The artifacts and this tool's execution is completely depend upon the changes co
 | 5.11.0 | 6.0.0 |
 
 ### Steps to execute is-migration-docs-creation-tool
-1. Clone the repository.
+1. Create a known directory in your PC and clone the repository into there.
 ```
-git clone https://github.com/DInuwan97/is-migration-docs-generator.git
+git clone https://github.com/DInuwan97/is-migration-docs-creation-tool.git
 ```
-2. Browse into `./is-migration-docs-generator/bash-client/` and add required parameters to the `values.config` file as follows.
+2. Browse into `./is-migration-docs-creation-tool/bash-client/` and add required parameters to the `values.config` file as follows.
 ```config
 git_pat=<VALID GIT PAT>
 customer_account_name=ABC-Institute
@@ -39,8 +43,8 @@ migration_cleint_veesion=1.0.227
 ```
 3. Don't keep any spaces when specifiy a customer's account name. Add `-` sign instead of blan spaces.
 4. Keep the other values as it is in the `values.config` file.
-5. Browse into './is-migration-docs-creation-tool/' and execute `sh startup.sh`
-6. Relevant docs will be created in the `root` directory with the follwoing.
+5. Execute `sh startup.sh` command.
+6. Relevant docs will be created in the `root` directory with follwoing.
 
      * Customer specific migration docs directory.
      * zip file of above directory.
