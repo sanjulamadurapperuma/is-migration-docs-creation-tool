@@ -72,16 +72,12 @@ else
 mkdir "WSO2x$customer_account_name-Identity-Server-Migration-$source_is_version-$target_is_version"
 echo "Directory created : $directory_name"
 
-rootPath=$PWD
-source_directory="$rootPath/migration-docs-main/identity-server/migration-clients"
-destination_directory="$rooPath/$directory_name"
 cd "$directory_name"
 mkdir "migration-client"
 
 
 #copy and paster migration clirnt zip
 cp -f "$migration_cleint_path/wso2is-migration-$migration_cleint_veesion.zip" "$PWD/migration-client"
-
 
 mkdir "migration-docs"
 cd "migration-docs"
