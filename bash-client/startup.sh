@@ -77,7 +77,7 @@ mkdir "migration-client"
 
 
 #copy and paster migration clirnt zip
-cp -f "$migration_cleint_path/wso2is-migration-$migration_cleint_veesion.zip" "$PWD/migration-client"
+cp -f "$migration_client_path/wso2is-migration-$migration_client_version.zip" "$PWD/migration-client"
 
 mkdir "migration-docs"
 cd "migration-docs"
