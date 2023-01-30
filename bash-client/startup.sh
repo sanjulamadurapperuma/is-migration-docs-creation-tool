@@ -10,10 +10,10 @@ then
  then
   if [ "$source_is_version" = "$target_is_version" ]
   then
-   echo "Source and Target versions shoul not be same."
+   echo "Source and Target versions should not be same."
   else
 
-# moving back to rrot directory
+# moving back to root directory
 cd ./../../
 
 # check if migration-docs from wso2-enterprise already avaialble
@@ -30,7 +30,7 @@ else
       git clone "https://$git_pat@github.com/wso2-enterprise/migration-docs.git"
         if [ -d "migration-docs" ]; then
           echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
-          echo "---------------------------------------------------------------------Cloning Complted----------------------------------------------------------------------------"
+          echo "---------------------------------------------------------------------Cloning Completed----------------------------------------------------------------------------"
           echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
         else
           echo "Unauthorized access to access wso2-enterprise"
@@ -58,13 +58,13 @@ zip_file_to_be_name="$renamed_directory.zip"
 cd ./../../
 
 if [ -d "$directory_name" ]; then
-  echo "Directory already exsists...."
-  echo "Migration docs creation gracefully stoped...."
+  echo "Directory already exists...."
+  echo "Migration docs creation gracefully stopped...."
 else
 
 if [ -d "$directory_to_be_named" ]; then
-  echo "Directory already exsists...."
-  echo "Migration docs creation gracefully stoped...."
+  echo "Directory already exists...."
+  echo "Migration docs creation gracefully stopped...."
 else
 
 
@@ -186,7 +186,7 @@ else
 fi
 
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
-echo "------------------------------------------------------------------What Has Changed step completed----------------------------------------------------------------"
+echo "------------------------------------------------------------------"What Has Changed" step completed----------------------------------------------------------------"
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 # exit from what-has-changed directory
@@ -233,10 +233,10 @@ then
    echo "Source IS version : $source_is_version. Log4j2 Migration steps not required."
   fi
 else
- echo "2-Migration Process : Target Version $target_is_version not supported"
+ echo "2-Migration Process : Target Version $target_is_version not supported."
 fi
 
-echo "-----------------------------------------------------------------Migration Process step completed----------------------------------------------------------------"
+echo "-----------------------------------------------------------------"Migration Process" step completed----------------------------------------------------------------"
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 # moving back from /2-Migration-process/6.0.0
@@ -260,7 +260,7 @@ else
  echo "3-Migration-docs : Target Version $target_is_version not supported"
 fi
 
-echo "-------------------------------------------------------------------Migration Docs step completed-----------------------------------------------------------------"
+echo "-------------------------------------------------------------------"Migration Docs" step completed-----------------------------------------------------------------"
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 cd ./../../../
@@ -269,7 +269,7 @@ cd ./../../../
 #########################
 #########################
 # Gracefully shuting down
-echo "Docs creation sucessfully completed."
+echo "Migration Docs creation sucessfully completed."
 
 # readme file creation
 touch README.md
@@ -286,7 +286,7 @@ echo "README content updated."
 renamed_directory="[WSO2 x $customer_account_name] Identity Server Migration from $source_is_version to $target_is_version"
 echo "$renamed_directory"
 
-# tree diagram of created migration doc directory
+# tree diagram of created migration docs directory
 tree -a
 
 cd ..
@@ -299,17 +299,17 @@ echo "Directory renamed as : $renamed_directory"
 zip_file_name="$renamed_directory.zip"
 
 if [ -d "$zip_file_name" ]; then
-  echo 'Zip file is already there.'
+  echo 'Zip file is already present.'
 else
   zip -r "$zip_file_name" "$renamed_directory"
-  echo 'File zipped successfully.'
+  echo 'Files zipped successfully.'
   echo "$zip_file_name"
 
   # observing md5sum
   touch "$zip_file_name.log"
   md5sum "$zip_file_name" >> "$zip_file_name.log"
 
-  echo "md5sum value taken for the zip"
+  echo "md5sum value taken for the zip file."
   echo "$zip_file_name.log"
 fi
 
@@ -320,8 +320,8 @@ fi
 
 # In user input was no, to clone the wso2-enterprise/migration-docs
 else
-  echo "WSO2 Identity Server Docs creation has forced shiutdown for $customer_account_name"
-  echo "Mannulay clone the wso2-enterprise/migration-docs and perform the docs creation again."
+  echo "WSO2 Identity Server Docs creation has been forced shutdown for $customer_account_name"
+  echo "Manually clone the wso2-enterprise/migration-docs and perform the docs creation again."
 fi
 
 
